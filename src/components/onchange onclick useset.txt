@@ -1,0 +1,39 @@
+#USESTATE , ONCLICK
+
+> import React, { useState } from 'react';
+
+Sabse pehle humne React se useState maanga. Ye ek special function hai (jise Hook kehte hain) jo React ko batata hai ki "Bhai, ye ek aisi cheez hai jo badal sakti hai (state), ispe nazar rakhna."
+
+
+>const [mode, setMode] = useState('light');
+
+Is ek line mein 3 badi cheezein ho rahi hain:
+mode: Ye aapka variable hai (jaise normal JS mein hota hai). Isme abhi 'light' save hai.
+setMode: Ye ek "remote control" function hai. Agar aapko mode ko badalna hai, toh aap direct mode = 'dark' nahi kar sakte, aapko setMode('dark') bolna padega.
+useState('light'): Ye bata raha hai ki shuruat mein (default) mode 'light' rahega.
+
+
+>const toggleMode = () => {
+  if (mode === 'light') {
+    setMode('dark'); // Mode ko dark kar do
+    document.body.style.backgroundColor = 'black'; // Poore page ko black kar do
+  } else {
+    setMode('light'); // Mode ko light kar do
+    document.body.style.backgroundColor = 'white'; // Poore page ko white kar do
+  }
+};
+
+Ab hum ek function banate hain jo check karega ki abhi kya mode hai aur use ulta kar dega:
+
+
+>  <button onClick={toggleMode}>Change Mode</button>
+
+aise hi user is button par click karega, hamara toggleMode function chalega, wo setMode ko call karega, aur screen ka color badal jayega.
+
+
+
+#ONCHANGE
+
+Bhai, onChange ka concept bahut simple hai par React mein ye bahut zaroori hota hai. Iska use tab hota hai jab aap Input Fields (jaise search bar, login form, ya comment box) ke saath kaam karte hain.
+
+Asaan bhasha mein: onChange ek aisa event hai jo tab chalta hai jab aap kisi input box mein kuch bhi type karte hain.

@@ -1,0 +1,29 @@
+props ke liye:
+
+export default function TextForms(props) {
+  return (
+    <div>
+      <div class="form-group">
+        <h1>{props.heading}</h1>
+        <label for="mybox" class="form-label">Example text area</label>
+        <textarea id="mybox" className="form-control"></textarea>
+        <small id="formHelp" class="form-text text-muted">Enter text we will analyze.</small>
+      </div>
+    </div>   
+  )
+}
+
+
+propstypes:
+
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired,
+    aboutText: PropTypes.string
+}
+
+
+
+default set props:
+
+export default function Navbar({ title = "set title here", aboutText = "About text here" })
+{aboutText}
